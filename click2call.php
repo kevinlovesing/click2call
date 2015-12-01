@@ -1,11 +1,9 @@
 <?php
-//require_once "mis_account.php";
 //phpinfo();
 
 //////////////////////////////////////////////////////////
 $ch = curl_init();
-//$api_request_url = 'http://mcc-ka-api.sankuai.info/v1/';
-$api_request_url = 'http://192.168.181.24:8000/v1/';
+$api_request_url = 'http://mcc-ka-api.sankuai.info/v1/';
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 curl_setopt($ch, CURLOPT_HEADER, TRUE);
@@ -22,24 +20,12 @@ $api_key = '0b454cfa81f4fb1568a564b2cfca4ace9f42c74f8ae7fbca37612fecec87be98';
 $auth_token = generate_authtoken();
 echo "auth token is ".$auth_token."\n" ;
 
-//$name = 'meituan';
-//$username = '3007';
 $password = 'mt1234';
-//$click2call_id = '959988266db73ffb7c8db5618817685d';
 $click2call_id = '5644e915612b07a1b02fa4627ab7756d';
 $contact = '57376600';
 //get_all_click2call();
 //add_click2call("test","18611905667","56309100");
 active_click2call($click2call_id, $contact);
-/*
-foreach($array_mis_account as $name => $username){
-	global $password ;
-//	echo $name."=>".$username."\n" ;
-//	add_mis_user($name, $username, $password);
-	delete_mis_user($name, $username);
-
-}
- */
 
 curl_close($ch);
 
@@ -79,8 +65,6 @@ function get_all_click2call(){
 	$response_body_obj = json_decode($api_response_body, TRUE) ;
 	var_dump($response_body_obj);
 
-//	$user_id = $response_body_obj[data][0][id];
-//	return $user_id;
 
 
 }
@@ -104,8 +88,6 @@ function add_click2call($name, $extension, $callerid){
 	$response_body_obj = json_decode($api_response_body, TRUE) ;
 	var_dump($response_body_obj);
 
-//	$user_id = $response_body_obj[data][0][id];
-//	return $user_id;
 
 
 }
@@ -129,8 +111,6 @@ function active_click2call($click2call_id, $contact){
 	$response_body_obj = json_decode($api_response_body, TRUE) ;
 	var_dump($response_body_obj);
 
-//	$user_id = $response_body_obj[data][0][id];
-//	return $user_id;
 
 
 }
@@ -142,7 +122,6 @@ function get_cdr_by_username($username, $created_from, $created_to){
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 	$userid = get_user_id_by_username($username) ;
         $api_request_url_users_cdr = $api_request_url_accounts.'users/'.$userid.'/cdrs?'.'created_from='.$created_from.'&created_to='.$created_to ;
-       // $api_request_url_users_cdr = $api_request_url_accounts.'users/'.$userid.'/cdrs?'.'created_from='.$created_from ;
 	echo $api_request_url_users_cdr ;
 	curl_setopt($ch, CURLOPT_URL, $api_request_url_users_cdr);	
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array('X-Auth-Token: '.$auth_token));
@@ -153,8 +132,6 @@ function get_cdr_by_username($username, $created_from, $created_to){
 	$response_body_obj = json_decode($api_response_body, TRUE) ;
 	var_dump($response_body_obj);
 
-//	$user_id = $response_body_obj[data][0][id];
-//	return $user_id;
 
 
 }
