@@ -12,8 +12,6 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 $recording_path = 'http://mcc-record01.wj.sankuai.info/recording';
 $account_id = '6ab3af15f6abced52e10129934d7207b';
 $api_request_url_accounts = $api_request_url.'accounts/'.$account_id.'/' ;
-//$api_key  = '6d24b64c26d57bedbfa4e814c409e370ffd9237610fa6a37d14cd1f1454d6973';
-//$api_key  = 'f08ac9e5bc8774d61f23f569ce90f3a530fe98e4b513138eb370338de0f7660c';
 $api_key = '0b454cfa81f4fb1568a564b2cfca4ace9f42c74f8ae7fbca37612fecec87be98';
 /////////////////////////////////////////////////////////
 
