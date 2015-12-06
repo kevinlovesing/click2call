@@ -1,7 +1,1 @@
-kevin 
-sherry
-wife
-husband
-wang
-zhang
-good job!
+Click2Call demo for kazoo!
