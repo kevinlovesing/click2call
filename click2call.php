@@ -3,13 +3,13 @@
 
 //////////////////////////////////////////////////////////
 $ch = curl_init();
-$api_request_url = 'http://mcc-ka-api.sankuai.info/v1/';
+$api_request_url = 'http://kazoo.com/v1/';
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 curl_setopt($ch, CURLOPT_HEADER, TRUE);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 /////////////////////////////////////////////////////////////
-$recording_path = 'http://mcc-record01.wj.sankuai.info/recording';
+$recording_path = '';
 $account_id = '6ab3af15f6abced52e10129934d7207b';
 $api_request_url_accounts = $api_request_url.'accounts/'.$account_id.'/' ;
 $api_key = '0b454cfa81f4fb1568a564b2cfca4ace9f42c74f8ae7fbca37612fecec87be98';
@@ -18,11 +18,11 @@ $api_key = '0b454cfa81f4fb1568a564b2cfca4ace9f42c74f8ae7fbca37612fecec87be98';
 $auth_token = generate_authtoken();
 echo "auth token is ".$auth_token."\n" ;
 
-$password = 'mt1234';
+$password = 'xxxx';
 $click2call_id = '5644e915612b07a1b02fa4627ab7756d';
-$contact = '57376600';
+$contact = '0101234567';
 //get_all_click2call();
-//add_click2call("test","18611905667","56309100");
+//add_click2call("test","186xxxxxxxx","0101234567");
 active_click2call($click2call_id, $contact);
 
 curl_close($ch);
